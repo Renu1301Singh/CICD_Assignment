@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="CromaTest"
+    errors="0" failures="1" hostname="" id="" package="CromaTest" skipped="0"
+    tests="1" time="14.47" timestamp="">
+  
+    <testcase name="should find croma homepage" classname="CromaTest" time="3.661" assertions="1">  <failure message="Timed out while waiting for element &lt;#magnifying-glass&gt; to be visible for 3000 milliseconds. - expected &#34;visible&#34; but got: &#34;not visible&#34; (3349ms)">    at Page.submit (/home/knoldus/Desktop/demo/nightwatch/page-objects/google/search.js:17:10)
+    at DescribeInstance.&lt;anonymous&gt; (/home/knoldus/Desktop/demo/test/CromaTest.js:20:16)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

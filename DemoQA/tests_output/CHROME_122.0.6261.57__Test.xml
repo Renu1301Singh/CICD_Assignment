@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="16">
+
+  <testsuite name="Test"
+    errors="0" failures="0" hostname="" id="" package="Test" skipped="0"
+    tests="16" time="29.68" timestamp="">
+  
+    <testcase name="1.) User entering valid input in First Name  : " classname="Test" time="0.1770" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="2.) User entering valid input in Last Name : " classname="Test" time="0.1500" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="3.) User entering valid input in Email : " classname="Test" time="0.1360" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="4.) User entering valid input in Email : " classname="Test" time="0.1040" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="5.) User entering valid input in Email : " classname="Test" time="0.1160" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="6.) User is able to select date of current year : " classname="Test" time="0.3210" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="8.) User is able to select a hobbies: " classname="Test" time="2.896" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="9.) User is able to enter address using alphabets and numbers : " classname="Test" time="0.09800" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="10.) User should be able to select a state : " classname="Test" time="1.280" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="10.) User should be able to select city : " classname="Test" time="0.2180" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="7.) User is able to select a subject : " classname="Test" time="0.7490" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="12.) User should be able to click on submit button with entering required fields : " classname="Test" time="0.08600" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="13.) User should be able to see Submission Message : " classname="Test" time="0.06900" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="14.) User is able to see all added enteries : " classname="Test" time="0.1450" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="15.) user is able to close the filled form display: " classname="Test" time="0.06100" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="16.) Entering Inavlid Email will not submit form : " classname="Test" time="1.019" assertions="22">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

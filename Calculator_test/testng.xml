@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite"  parallel="methods" thread-count="2">
+    <test name="MyTest">
+        <groups>
+            <run>
+                <include name="basicOperations"/>
+                <include name="advancedOperations"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="ScientificCalculatorTest">
+                <methods>
+                    <include name="testAddition" />
+                    <include name="testSubtraction" />
+                    <include name="testMultiplication" />
+                    <include name="testDivision" />
+                    <include name="testSquareRoot" />
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

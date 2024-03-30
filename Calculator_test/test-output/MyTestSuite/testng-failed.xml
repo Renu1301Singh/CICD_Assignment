@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
+  <test name="MyTest">
+    <groups>
+      <run>
+        <include name="basicOperations"/>
+        <include name="advancedOperations"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="ScientificCalculatorTest">
+        <methods>
+          <include name="testAddition"/>
+          <include name="testSubtraction"/>
+          <include name="testMultiplication"/>
+          <include name="testDivision"/>
+          <include name="testSquareRoot"/>
+        </methods>
+      </class> <!-- ScientificCalculatorTest -->
+    </classes>
+  </test> <!-- MyTest -->
+</suite> <!-- Failed suite [MyTestSuite] -->

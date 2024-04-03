@@ -122,13 +122,14 @@ jobs:
         run: |
           cd RestAssured  # Navigate to your RestAssured project directory
           mvn clean test
+          ..
 
       - name: Upload test reports
         if: always()  # Ensure reports are uploaded even if tests fail
         uses: actions/upload-artifact@v4
         with:
           name: restassured-test-reports
-          path: RestAssured/target/site
+          path: RestAssured_report
 
         
   Jmeter_Test:
@@ -154,11 +155,10 @@ jobs:
         run: /opt/apache-jmeter-5.6.3/bin/jmeter -n -t "JmeterAssignment/testingHTTP(S) Test Script Recorder.jmx"
 
 
-      - name: Upload Test Results
+      - name: Upload JMeter Report
         uses: actions/upload-artifact@v4
         with:
-          name: jmeter-test-results
-          path: test-results.jtl
+          name: jmeter-report
 
 
    

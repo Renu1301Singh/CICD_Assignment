@@ -1,5 +1,5 @@
 package test;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -10,23 +10,29 @@ import pages.*;
 import java.util.concurrent.TimeUnit;
 
 public class lumaTest {
+    WebDriver driver;
+    String driverPath = "/usr/bin/chromedriver";
+    ChromeOptions options;
     HomePage HomePage;
     LogInpage logInpage;
     MyAccountpage myAccountpage;
     Wishlistpage wishlistpage;
     Comparepage comparepage;
     Cartpage cartpage;
-    WebDriver driver;
 
     @BeforeTest
     public void setUp() {
-
-        driver = new ChromeDriver();
+        options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://magento.softwaretestingboard.com/");
-
     }
+
 
     @Test(priority = 0, description = "verifying Home Page Title")
     void verifyingTitle() {

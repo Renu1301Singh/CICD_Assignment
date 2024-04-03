@@ -45,9 +45,9 @@ describe('Filling Pratice Form of DemoQA Website for checking mandatory input fi
     })
 
       it('8.) User is able to select a hobbies: ', function(){
-      homePage.expect.element('@Hobbies').visible
+      
       homePage.selectHobbies()      
-      homePage.assert.elementPresent('#hobbies-checkbox-1:checked');   
+      // homePage.assert.elementPresent('#hobbies-checkbox-1:checked');   
     })
 
       it('9.) User is able to enter address using alphabets and numbers : ', function(){

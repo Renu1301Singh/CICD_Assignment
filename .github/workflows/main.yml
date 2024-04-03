@@ -14,28 +14,25 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js and Newman
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-   # Install Newman CLI
-      - name: Install Newman
+          node-version: '21'
+
+      - name: Install Newman CLI
         run: npm install -g newman
 
-      # Install htmlextra-export reporter
       - name: Install htmlextra-export reporter
         run: npm install -g newman-reporter-htmlextra
 
       - name: Run Postman tests
-        run:  newman run Postman_Assignment/Go_REST.postman_collection.json -e Postman_Assignment/Test_env.postman_environment.json -r htmlextra --reporter-htmlextra-export testReport.html
-
+        run: newman run Postman_Assignment/Go_REST.postman_collection.json -e Postman_Assignment/Test_env.postman_environment.json -r htmlextra --reporter-htmlextra-export testReport.html
 
       - name: Upload Postman Test Report
         uses: actions/upload-artifact@v3
         with:
           name: Postman_Test_Report
           path: testReport.html
-
 
   Selenium_test:
     runs-on: ubuntu-latest

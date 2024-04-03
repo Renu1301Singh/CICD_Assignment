@@ -53,6 +53,16 @@ jobs:
       run: |
        cd Magneto
        mvn -B clean test
+       
+    - name: Upload Test Report
+
+      uses: actions/upload-artifact@v3
+
+      with:
+
+        name: Test Report
+
+        path: target/surefire-reports/
          
   Nightwatch_test:
     runs-on: ubuntu-latest

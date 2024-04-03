@@ -17,12 +17,12 @@ jobs:
       - name: Install Node.js and Newman
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-   # Install Newman CLI
+          node-version: '21'
+ 
       - name: Install Newman
         run: npm install -g newman
 
-      # Install htmlextra-export reporter
+  
       - name: Install htmlextra-export reporter
         run: npm install -g newman-reporter-htmlextra
 
@@ -63,7 +63,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-         #node-version: $undefined
+      
          cache: 'npm'
 
       - name: Use Node.js
@@ -71,8 +71,6 @@ jobs:
         with:
           node-version: 21
 
-     # - name: Install Nightwatch.js
-      #  run: npm install -g nightwatch
       - name: npm-install
         run: |
           cd DemoQA
@@ -84,18 +82,6 @@ jobs:
         run: |
           cd DemoQA
           xvfb-run --auto-servernum npm test -- --env chrome
-    #  - name: Install Selenium WebDriver
-     #   run: npm install selenium-webdriver
-      #- name: Install Chrome
-       # run: |
-        # sudo apt-get update
-         #sudo apt-get install -y google-chrome-stable
-         
-  
-     # - name: Run Nightwatch tests
-    #    run: |
-       #   cd DemoQA
-        #  nightwatch --config nightwatch.conf.js --chrome-path /usr/bin/google-chrome-stable      
 
 
       - name: Upload test results

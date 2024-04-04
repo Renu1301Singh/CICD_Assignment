@@ -10,26 +10,34 @@ jobs:
   postman_test:
     runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
+      # Install Node.js
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
-          node-version: '21'
+          node-version: '16.x' # update Node.js to the latest version
 
-      - name: Install Newman CLI
+      # Install Newman CLI
+      - name: Install Newman
         run: npm install -g newman
 
+      # Install htmlextra-export reporter
       - name: Install htmlextra-export reporter
         run: npm install -g newman-reporter-htmlextra
 
+      # Run Postman tests
       - name: Run Postman tests
+     
         run: newman run Postman_Assignment/Go_REST.postman_collection.json -e Postman_Assignment/Test_env.postman_environment.json -r htmlextra --reporter-htmlextra-export testReport.html
 
       - name: Upload Postman Test Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: Postman_Test_Report
           path: testReport.html

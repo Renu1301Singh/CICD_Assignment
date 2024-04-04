@@ -159,7 +159,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jmeter-test-report
-          path: JmeterAssignment/result.jtl
+          path: JmeterAssignment
+          if-no-files-found: error
 
 
    

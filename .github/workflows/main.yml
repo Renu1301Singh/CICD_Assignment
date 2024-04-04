@@ -7,42 +7,36 @@ on:
     - cron: '0 10 * * 1'  # Run at 10:00 AM every Monday
 
 jobs:
-  postman_test:
+ 
+ postman_test:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      # Install Node.js
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Install Node.js and Newman
+        uses: actions/setup-node@v3
         with:
-          node-version: '21' # update Node.js to the latest version
-
-      # Install Newman CLI
+          node-version: '21'
+ 
       - name: Install Newman
         run: npm install -g newman
 
-      # Install htmlextra-export reporter
+  
       - name: Install htmlextra-export reporter
         run: npm install -g newman-reporter-htmlextra
 
-      # Run Postman tests
       - name: Run Postman tests
-     
-        run: newman run Postman_Assignment/Go_REST.postman_collection.json -e Postman_Assignment/Test_env.postman_environment.json -r htmlextra --reporter-htmlextra-export testReport.html
+        run:   newman run "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r cli, htmlextra --reporter-htmlextra-export testReport.html
 
       - name: Upload Postman Test Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: Postman_Test_Report
           path: testReport.html
 
-  Selenium_test:
+ Selenium_test:
     runs-on: ubuntu-latest
  
     steps:
@@ -72,7 +66,7 @@ jobs:
 
         path: Magneto/target
          
-  Nightwatch_test:
+ Nightwatch_test:
     runs-on: ubuntu-latest
 
 
@@ -106,7 +100,7 @@ jobs:
         with:
          name: Nightwatch-test-results
          path: DemoQA/tests_output 
-  RestAssured_test:
+ RestAssured_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -140,7 +134,7 @@ jobs:
           path: RestAssured/target
 
         
-  Jmeter_Test:
+ Jmeter_Test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository

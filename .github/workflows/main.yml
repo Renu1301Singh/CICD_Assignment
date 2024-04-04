@@ -60,9 +60,9 @@ jobs:
 
       with:
 
-        name: test-reports
+        name: Selenium-test-reports
 
-        path: target/surefire-reports
+        path: target
          
   Nightwatch_test:
     runs-on: ubuntu-latest
@@ -96,8 +96,8 @@ jobs:
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
-         name: nightwatch-test-results
-         path: DemoQA/test-results 
+         name: Nightwatch-test-results
+         path: test_output 
   RestAssured_test:
     runs-on: ubuntu-latest
 
@@ -128,8 +128,8 @@ jobs:
         if: always()  # Ensure reports are uploaded even if tests fail
         uses: actions/upload-artifact@v4
         with:
-          name: restassured-test-reports
-          path: RestAssured_report
+          name: Restassured-test-reports
+          path: target
 
         
   Jmeter_Test:
@@ -158,7 +158,8 @@ jobs:
       - name: Upload JMeter Report
         uses: actions/upload-artifact@v4
         with:
-          name: jmeter-report
+          name: jmeter-test-report
+          path: result.jtl
 
 
    

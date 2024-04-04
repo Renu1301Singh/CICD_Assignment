@@ -62,7 +62,7 @@ jobs:
 
         name: Selenium-test-reports
 
-        path: target
+        path: Magneto/target
          
   Nightwatch_test:
     runs-on: ubuntu-latest
@@ -97,7 +97,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: Nightwatch-test-results
-         path: test_output 
+         path: DemoQA/tests_output 
   RestAssured_test:
     runs-on: ubuntu-latest
 
@@ -129,7 +129,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Restassured-test-reports
-          path: target
+          path: RestAssured/target
 
         
   Jmeter_Test:
@@ -159,7 +159,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jmeter-test-report
-          path: result.jtl
+          path: JmeterAssignment/result.jtl
 
 
    

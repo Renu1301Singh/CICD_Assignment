@@ -10,25 +10,24 @@ jobs:
  
  postman_test:
     runs-on: ubuntu-latest
-
+  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js and Newman
+      - name: Install Node.js and Newman (globally)
         uses: actions/setup-node@v3
         with:
           node-version: '21'
- 
-      - name: Install Newman
+
+      - name: Install Newman globally
         run: npm install -g newman
 
-  
-      - name: Install htmlextra-export reporter
+      - name: Install htmlextra-export reporter (globally)
         run: npm install -g newman-reporter-htmlextra
 
-      - name: Run Postman tests
-        run:   newman run "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r cli, htmlextra --reporter-htmlextra-export testReport.html
+      - name: Run Postman tests (with increased verbosity)
+        run: newman run --verbose "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r htmlextra --reporter-htmlextra-export testReport.html
 
       - name: Upload Postman Test Report
         uses: actions/upload-artifact@v3
@@ -94,12 +93,12 @@ jobs:
           cd DemoQA
           xvfb-run --auto-servernum npm test -- --env chrome
 
-
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
          name: Nightwatch-test-results
          path: DemoQA/tests_output 
+         
  RestAssured_test:
     runs-on: ubuntu-latest
 
@@ -124,7 +123,6 @@ jobs:
         run: |
           cd RestAssured  # Navigate to your RestAssured project directory
           mvn clean test
-          ..
 
       - name: Upload test reports
         if: always()  # Ensure reports are uploaded even if tests fail

@@ -85,19 +85,25 @@ jobs:
         run: |
           cd DemoQA
           npm ci
-      - run: |
-          cd DemoQA
-          sudo apt-get install xvfb
+ 
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+
       - name: Run Nightwatch tests
         run: |
-          cd DemoQA
-          xvfb-run --auto-servernum npm test -- --env chrome
+         cd DemoQA  
+         xvfb-run --auto-servernum npm test -- --env chrome
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
+      - name: Generate HTML report
+        run: |
+           cd DemoQA
+           mkdir -p reports
+           npx nightwatch-html-reporter --input ./tests_output/combined.xml --output ./reports
+
+      - name: Upload HTML report as artifact
+        uses: actions/upload-artifact@v2
         with:
-         name: Nightwatch-test-results
-         path: DemoQA/tests_output 
+          name: nightwatch-report
          
  RestAssured_test:
     runs-on: ubuntu-latest

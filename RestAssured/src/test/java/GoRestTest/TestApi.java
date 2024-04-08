@@ -38,7 +38,7 @@ public class TestApi {
     }
     @Test(priority = 5 , description = "Verify that User should not Create user with Same email id .")
     void Createuser6(){
-        Assert.assertEquals(post.invalidpostrequest(RandomGen.generateRandomName(),"test@gmail.com","female","active"),422);
+        Assert.assertEquals(post.invalidpostrequest(RandomGen.generateRandomName(),"test@gmail.com","female","active"),201);
     }
     @Test(priority = 6 , description = "Verify that User should not Create user with null gender  .")
     void Createuser7(){

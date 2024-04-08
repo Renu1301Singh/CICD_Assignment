@@ -63,7 +63,7 @@ jobs:
       with:
 
         name: Selenium-test-reports
-
+        if: always()  # Ensure reports are uploaded even if tests fail
         path: Magneto/target
          
  Nightwatch_test:
@@ -94,6 +94,7 @@ jobs:
           cd DemoQA
           xvfb-run --auto-servernum npm test -- --env chrome
       - name: Upload test results
+        if: always()  # Ensure reports are uploaded even if tests fail
         uses: actions/upload-artifact@v4
         with:
          name: Nightwatch-test-results
@@ -156,11 +157,12 @@ jobs:
 
 
       - name: Upload JMeter Report
+        if: always()  # Ensure reports are uploaded even if tests fail
         uses: actions/upload-artifact@v4
         with:
           name: jmeter-test-report
           path: JmeterAssignment
-          if-no-files-found: error
+         
 
 
    

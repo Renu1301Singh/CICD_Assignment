@@ -10,7 +10,7 @@ This GitHub repository hosts an automated testing pipeline that integrates multi
 
 The repository contains the following directories and files:
 
-- **.github/workflows**: This directory contains the GitHub Actions workflow file (workflow.yml) that defines the CI/CD pipeline for running automated tests.
+- **.github/workflows**: This directory contains the GitHub Actions workflow file (test.yml) that defines the CI/CD pipeline for running automated tests.
   
 - **Postman_Assignment**: Contains Postman collection files (Go_REST.postman_collection.json) and environment configuration files (Test_env.postman_environment.json) for API testing.
 

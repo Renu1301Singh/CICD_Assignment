@@ -24,7 +24,7 @@ The repository contains the following directories and files:
 
 ### Workflow
 
-The GitHub Actions workflow file (workflow.yml) manages the automated testing pipeline. It defines jobs for each testing framework, including installation of dependencies, execution of tests, and generation of reports.
+The GitHub Actions workflow file (test.yml) manages the automated testing pipeline. It defines jobs for each testing framework, including installation of dependencies, execution of tests, and generation of reports.
 
 ### Getting Started
 

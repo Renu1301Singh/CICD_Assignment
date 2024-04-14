@@ -36,7 +36,7 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
           name: Postman_Test_Report
-          path: testReport.html
+          path: Postman_Assignment
 
  Selenium_test:
     runs-on: ubuntu-latest

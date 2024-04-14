@@ -31,10 +31,9 @@ jobs:
 
      - name: Run Postman tests 
        run: newman run  "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r cli,htmlextra-export testReport.html
-
      - name: Upload Postman Test Report
        if: always()  # Ensure reports are uploaded even if tests fail
-       uses: actions/upload-artifact@v3
+       uses: actions/upload-artifact@v2
        with:
           name: Postman_Test_Report
           path: testReport.html

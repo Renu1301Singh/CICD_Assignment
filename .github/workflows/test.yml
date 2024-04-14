@@ -26,8 +26,8 @@ jobs:
       - name: Install htmlextra-export reporter (globally)
         run: npm install -g newman-reporter-htmlextra
 
-      - name: Run Postman tests (with increased verbosity)
-        run: newman run --verbose "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r htmlextra --reporter-htmlextra-export testReport.html
+      - name: Run Postman tests 
+        run: newman run  "Postman_Assignment/Go_REST.postman_collection.json" -e "Postman_Assignment/Test_env.postman_environment.json" -r htmlextra --reporter-htmlextra-export testReport.html
 
       - name: Upload Postman Test Report
         if: always()  # Ensure reports are uploaded even if tests fail

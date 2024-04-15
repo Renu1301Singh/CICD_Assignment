@@ -99,7 +99,7 @@ jobs:
         if: always()  # Ensure reports are uploaded even if tests fail
         uses: actions/upload-artifact@v4
         with:
-         name: Nightwatch-test-results
+         name: Nightwatch-test-report
          path: DemoQA/tests_output 
          
  RestAssured_test:

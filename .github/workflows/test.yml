@@ -156,6 +156,7 @@ jobs:
         wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
         tar -xvzf apache-jmeter-$JMETER_VERSION.tgz
         export PATH=$PATH:$GITHUB_WORKSPACE/apache-jmeter-$JMETER_VERSION/bin
+        echo "Updated PATH: $PATH"  # Debugging output
         jmeter -v  # Verify JMeter installation
 
     - name: Create reports directory

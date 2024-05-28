@@ -157,10 +157,6 @@ jobs:
       - name: Create reports directory
         run: mkdir -p reports
 
-      - name: Run JMeter test for CredentialsView
-        run: |
-         jmeter -n -t "JmeterAssignment/CredentialsView Results Tree.jmx" -l reports/results_credentials.jtl -e -o reports/output_credentials
-
       - name: Run JMeter test for HTTP(S) Recorder
         run: |
          jmeter -n -t "JmeterAssignment/testingHTTP(S) Test Script Recorder.jmx" -l reports/results_http_recorder.jtl -e -o reports/output_http_recorder
@@ -170,7 +166,6 @@ jobs:
         with:
          name: jmeter-results
          path: reports
-         
 
 
    

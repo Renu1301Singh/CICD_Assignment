@@ -152,7 +152,7 @@ jobs:
           JMETER_VERSION="5.5"
           wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
           tar -xvzf apache-jmeter-$JMETER_VERSION.tgz
-          export PATH=$PATH:$GITHUB_WORKSPACE/apache-jmeter-$JMETER_VERSION/bin
+          export PATH=$PATH:$GITHUB_WORKSPACE/JmeterAssignment/apache-jmeter-$JMETER_VERSION/bin
 
       - name: Create reports directory
         run: mkdir -p reports

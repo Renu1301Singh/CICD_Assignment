@@ -147,23 +147,29 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
 
-      - name: Download and Install JMeter
+      - name: Download and install JMeter
         run: |
-          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz
-          tar -xf apache-jmeter-5.6.3.tgz
-          sudo mv apache-jmeter-5.6.3 /opt/
-          echo 'export PATH=/opt/apache-jmeter-5.6.3/bin:$PATH' >> ~/.bashrc
-          source ~/.bashrc
-      - name: Run JMeter Tests
-        run: /opt/apache-jmeter-5.6.3/bin/jmeter -n -t "JmeterAssignment/testingHTTP(S) Test Script Recorder.jmx"
+          JMETER_VERSION="5.5"
+          wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz
+          tar -xvzf apache-jmeter-$JMETER_VERSION.tgz
+          export PATH=$PATH:$GITHUB_WORKSPACE/apache-jmeter-$JMETER_VERSION/bin
 
+      - name: Create reports directory
+        run: mkdir -p reports
 
-      - name: Upload JMeter Report
-        if: always()  # Ensure reports are uploaded even if tests fail
-        uses: actions/upload-artifact@v4
+      - name: Run JMeter test for CredentialsView
+        run: |
+         jmeter -n -t "JmeterAssignment/CredentialsView Results Tree.jmx" -l reports/results_credentials.jtl -e -o reports/output_credentials
+
+      - name: Run JMeter test for HTTP(S) Recorder
+        run: |
+         jmeter -n -t "JmeterAssignment/testingHTTP(S) Test Script Recorder.jmx" -l reports/results_http_recorder.jtl -e -o reports/output_http_recorder
+
+      - name: Upload JMeter results
+        uses: actions/upload-artifact@v3
         with:
-          name: jmeter-test-report
-          path: JmeterAssignment
+         name: jmeter-results
+         path: reports
          
 
 

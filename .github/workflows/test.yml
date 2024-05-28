@@ -121,6 +121,9 @@ jobs:
           echo "export PATH=$GITHUB_WORKSPACE/apache-jmeter-5.5/bin:$PATH" >> $GITHUB_ENV
           source $GITHUB_ENV
           jmeter -v
+          echo "Contents of bin directory:"
+          ls -l $GITHUB_WORKSPACE/apache-jmeter-5.5/bin
+
 
       - name: Run JMeter test script
         run: |

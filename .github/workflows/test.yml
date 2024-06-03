@@ -1,7 +1,7 @@
 name: Automated Testing
 'on':
-  push: null
-  workflow_dispatch: null
+  push: 
+  workflow_dispatch: 
  # schedule:
   #  - cron: 0 10 * * 1
 jobs:

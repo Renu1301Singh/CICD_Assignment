@@ -2,8 +2,8 @@ name: Automated Testing
 'on':
   push: null
   workflow_dispatch: null
-  schedule:
-    - cron: 0 10 * * 1
+ # schedule:
+  #  - cron: 0 10 * * 1
 jobs:
   postman_test:
     runs-on: ubuntu-latest

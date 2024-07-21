@@ -20,7 +20,7 @@ The repository contains the following directories and files:
 
 - **RestAssured**: Holds the Maven project (pom.xml) and source code for Rest Assured API testing.
 
-- **Calculator_test**: Includes the Maven project (pom.xml) and source code for Selenium UI testing.
+- **Magneto**: Includes the Maven project (pom.xml) and source code for Selenium UI testing.
 
 ### Workflow
 
